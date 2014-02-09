@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
 	var userID=getUserID(); 
-	var userObj=getUserObj();
 	var username=getUserName();
+	var userObj=getUserObj();
 	var hasPost=hasEvent();
 	var postObj=getUserEvent(userID);
 	var friends=myFriends();
@@ -27,9 +27,9 @@ $(document).ready(function() {
 	
 	var UserObj = Parse.Object.extend({
 	id : "facebookID",
+	name : "name";
 	safe : "isSafe",
-	friends : "userFriends",
-	post : "post"
+	event : "event"
 	});
 	
 	/*
@@ -58,7 +58,7 @@ $(document).ready(function() {
 		if(!isNewUser()){
 			return Parse.Query(userID);
 		}else{
-			return new UserObj{Parse.Query(Parse.User).userID};
+			
 		}
 	}else{
 	//TODO
@@ -86,7 +86,6 @@ $(document).ready(function() {
 	/Return friends of the user
 	*/
 	function myFriends(){
-		
 	}
 	
 	/*
@@ -116,6 +115,14 @@ $(document).ready(function() {
 	/add user to DB
 	*/ 
 	function addNewUser(){
+		new user = UserObj({
+			id=userID;
+			name=userName;
+			hasEvent=false;
+			event=null;
+			isSafe=true;
+			
+		});
 	}
 	
 	
