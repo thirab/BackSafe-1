@@ -26,7 +26,7 @@ var UserObj = Parse.Object.extend({
 	id : "facebookID",
 	safe : "isSafe",
 	friends : "userFriends"
-	};
+	});
 
 
 // Use Parse.Cloud.define to define as many cloud functions as you want.
