@@ -35,7 +35,7 @@ Parse.Cloud.define("hello", function(request, response) {
   response.success("Hello world!");
 });
 
-Parse.Cloud.define("gotBack", function(request,response){
+Parse.Cloud.define("gotBack", function(){
 	response.sucess("something!");
 	//set user.safe = true;
 });
