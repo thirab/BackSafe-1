@@ -1,6 +1,6 @@
-$(function() {
-
-  Parse.$ = jQuery;
+(function() {
+	Parse.initialize();
+	Parse.$ = jQuery;
 
   // TASK 1: ENTER YOUR APPLICATION AND JAVASCRIPT KEYS HERE
   Parse.initialize("K809xYpHgzM7reOEW2osYc6Utzqz33KkBN44daoR",
