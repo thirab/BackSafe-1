@@ -70,7 +70,9 @@ $(document).ready(function() {
 	//Find the event of the user if they have one
 	*/
 	function checkMyEvent(){
-	
+	//todo
+		userObj.event;
+		
 	}
 	
 	/*
