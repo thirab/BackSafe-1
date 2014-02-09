@@ -52,7 +52,7 @@ Parse.Cloud.define("getFriends", function(user){
 Parse.Cloud.define("getEvent", function(user){
 	response.sucess("getEvent!");
 //todo for user get event
-}
+});
 Parse.Cloud.define("postNew", function(){
     var outEvent = new Event();
     outEvent.expectedBack=document.getElementById("back").value;
