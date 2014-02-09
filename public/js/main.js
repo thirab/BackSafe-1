@@ -24,11 +24,12 @@ $(document).ready(function() {
 		//gather the form data
 
 		var event = new Event();
-		event.dest = $("#dest").val();
+		event.destination = $("#dest").val();
 
 		event.save(null, {
 			success:function() {
 				console.log("Success");
+				console.log(event.destination);
 			},
 			error:function(e) {
 				console.dir(e);
