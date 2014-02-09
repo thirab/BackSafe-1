@@ -13,7 +13,7 @@ $(function() {
 //events
 var Event = Parse.Object.extend({
 	destination: "destination",
-	expectedBack: "expectedBack"
+	expectedBack: "expectedBack",
 	bufferTime: "buffer",
 	userDescription: "userDescription",
 	travelingWith: "travelingWith",
@@ -45,6 +45,8 @@ Parse.Cloud.define("post", function(request,response){
     outEvent.userDescription = document.getElementById("wearing").value;
     outEvent.travelingWith = document.getElementById("with").value;
     outEvent.meeting = document.getElementById("meeting").value;
+    
+    outEvent.save(null,{});
 
 });
 
