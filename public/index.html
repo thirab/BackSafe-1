@@ -74,23 +74,23 @@
 			<button type="button" class="btn btn-custom">I'm Back Safe!</button>
 		</div>
 		<div class="col-md-6 column">
-			<form role="form">
+			<form id="eventForm" role="form">
 				<div class="form-group">
 					 <label>Destination</label><input class="form-control">
 				</div>
 				<div class="form-group">
-					 <label>When will you be back?</label><input class="form-control">
+					 <label>When will you be back?</label><input id="back" class="form-control">
 				</div>
 				<div class="form-group">
-					 <label>What are you wearing?</label><input class="form-control">
+					 <label>What are you wearing?</label><input id="wearing" class="form-control">
 				</div>
 				<div class="form-group">
-					 <label>Who are you with?</label><input class="form-control">
+					 <label>Who are you with?</label><input id="with" class="form-control">
 				</div>
 				<div class="form-group">
-					 <label>Who are you meeting?</label><input class="form-control">
+					 <label>Who are you meeting?</label><input id="meeting" class="form-control">
 				</div>
-				<button type="submit" class="btn btn-default">Head Out</button>
+				<button type="button" onclick="post()" class="btn btn-default">Head Out</button>
 			</form>
 		</div>
 		<div class="col-md-4 column">

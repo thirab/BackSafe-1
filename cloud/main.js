@@ -14,7 +14,12 @@ Parse.Cloud.define("getFriends", function(request,response){
 });
 
 Parse.Cloud.define("post", function(request,response){
-	response.sucess("Store Data!");
+    new outEvent(
+    document.getElementById("back").value;
+    document.getElementById("wearing").value;
+    document.getElementById("with").value;
+    document.getElementById("meeting").value;
+
 });
 
 Parse.Cloud.define("CheckSafe", function(request,response){
@@ -32,3 +37,4 @@ var Event = Parse.Object.extend({
 	timeLeaving: "timeLeaving",
 	doing: "doing"
 });
+
