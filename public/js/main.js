@@ -92,6 +92,7 @@ $(document).ready(function() {
 	//Return missing friends of the user
 	*/
 	function missingFriends(){
+		
 	}
 	
 	/*
