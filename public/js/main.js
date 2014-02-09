@@ -49,7 +49,7 @@ $(document).ready(function() {
 	*/
 	function getUserObj(){
 	if(!FB.getLoginStatus()){
-		if(Parse.Query(Parse.User)!=null){
+		if(!isNewUser()){
 			return Parse.Query(Parse.User);
 		}else{
 			return new UserObj{Parse.Query(Parse.User).userID};
@@ -71,7 +71,7 @@ $(document).ready(function() {
 	/Return if a user has posted an event
 	*/
 	function hasEvent()= new function(){
-	
+		return Parse.Query(Parse.User).hasEvent;
 	}
 	
 	/*
@@ -90,24 +90,29 @@ $(document).ready(function() {
 	//Return friends of the user's Event
 	*/
 	function getUserEvent(userID){
+		Parse.Query(userID).event;
 	}
 	
 	/*
 	/Return if user is new
 	*/ 
 	function isNewUser(userID){
+		if(Parse.Query(Parse.User)!=null){
+			return false;
+		}
+		return true;
 	}
 	
 	/*
 	/add user to DB
 	*/ 
-	function addNewUser(userID){
+	function addNewUser(){
 	}
 	
 	//?
 	FB.api('/me', function(response) {
- 	 alert('Your name is ' + response.name);
- 	 alert('Your ID is ' + response.id);
+ 	 userName=response.name;
+ 	 userID=response.id;
 	});
 	
 	
