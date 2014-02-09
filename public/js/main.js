@@ -1,10 +1,12 @@
 $(document).ready(function() {
 
-	var username="bob"; 
+	var userObj=getUserObj();
+	var username=getUserName();
+	var userID=getUserID(); 
 	var hasPost=hasEvent();
-	var postObj="the object";
-	var friends="my friends";
-	var friendsMissing="missing?";
+	var postObj=getUserEvent(userID);
+	var friends=myFriends();
+	var friendsMissing=missingFriends();;
 	
 	
   Parse.initialize("E3aKqq2sCS2aC20YyNALua7YMGxMMZd71IJ0iTHb",
@@ -35,6 +37,17 @@ $(document).ready(function() {
 	function getUserID(){
 	}
 	
+	/*
+	/Get user Name
+	*/
+	function getUserName(){
+	}
+	
+	/*
+	/Get user ID
+	*/
+	function getUserObj(){
+	}
 	/*
 	//Find the event of the user if they have one
 	*/
