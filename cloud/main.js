@@ -22,10 +22,10 @@ var Event = Parse.Object.extend({
 	doing: "doing"
 });
 
-var User = Parse.Object.extend({
-	id = "facebookID",
-	safe = "isSafe",
-	friends = " userFriends"
+var UserObj = Parse.Object.extend({
+	id : "facebookID",
+	safe : "isSafe",
+	friends : "userFriends"
 	};
 
 
