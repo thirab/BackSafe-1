@@ -36,12 +36,18 @@ $(document).ready(function() {
 	/Get user ID
 	*/
 	function getUserID(){
+		FB.api('/me', function(response) {
+ 		 userID=response.id;
+		});
 	}
 	
 	/*
 	/Get user Name
 	*/
 	function getUserName(){
+		FB.api('/me', function(response) {
+ 		 userName=response.name;
+		});
 	}
 	
 	/*
@@ -50,7 +56,7 @@ $(document).ready(function() {
 	function getUserObj(){
 	if(!FB.getLoginStatus()){
 		if(!isNewUser()){
-			return Parse.Query(Parse.User);
+			return Parse.Query(userID);
 		}else{
 			return new UserObj{Parse.Query(Parse.User).userID};
 		}
@@ -78,6 +84,7 @@ $(document).ready(function() {
 	/Return friends of the user
 	*/
 	function myFriends(){
+		
 	}
 	
 	/*
@@ -109,11 +116,7 @@ $(document).ready(function() {
 	function addNewUser(){
 	}
 	
-	//?
-	FB.api('/me', function(response) {
- 	 userName=response.name;
- 	 userID=response.id;
-	});
+	
 	
 	
 	$("#eventForm").on("submit", function(e) {
