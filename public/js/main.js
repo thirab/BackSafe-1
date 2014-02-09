@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	var username="bob"; 
-	var hasPost=false;
+	var hasPost=hasEvent();
 	var postObj="the object";
 	var friends="my friends";
 	var friendsMissing="missing?";
@@ -28,6 +28,12 @@ $(document).ready(function() {
 	safe : "isSafe",
 	friends : "userFriends"
 	});
+	
+	/*
+	/Get user ID
+	*/
+	function getUserID(){
+	}
 	
 	/*
 	//Find the event of the user if they have one
@@ -70,6 +76,12 @@ $(document).ready(function() {
 	*/ 
 	function addNewUser(userID){
 	}
+	
+	//?
+	FB.api('/me', function(response) {
+ 	 alert('Your name is ' + response.name);
+ 	 alert('Your ID is ' + response.id);
+	});
 	
 	
 	$("#eventForm").on("submit", function(e) {
