@@ -50,10 +50,11 @@ Parse.Cloud.define("getFriends", function(user){
 });
 
 Parse.Cloud.define("getEvent", function(user){
+	response.sucess("getEvent!");
 //todo for user get event
 }
-Parse.Cloud.define("post", function(request,response){
-    new outEvent = new Event();
+Parse.Cloud.define("postNew", function(){
+    var outEvent = new Event();
     outEvent.expectedBack=document.getElementById("back").value;
     outEvent.userDescription = document.getElementById("wearing").value;
     outEvent.travelingWith = document.getElementById("with").value;
@@ -80,5 +81,23 @@ Parse.FacebookUtils.logIn("email,read_friendlists,publish_actions,publish_action
     alert("User cancelled the Facebook login or did not fully authorize.");
   }
 });
+
+//todo needs to create view
+ // The main view for the app
+//   var AppView = Parse.View.extend({
+//     // Instead of generating a new element, bind to the existing skeleton of
+//     // the App already present in the HTML.
+//     el: $("#todoapp"),
+// 
+//     initialize: function() {
+//       this.render();
+//     },
+// 
+//     render: function() {
+//       new ManageTodosView();
+//     }
+//   });
+// 
+//   new AppView;
 });
 
