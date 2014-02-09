@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
+	var userID=getUserID(); 
 	var userObj=getUserObj();
 	var username=getUserName();
-	var userID=getUserID(); 
 	var hasPost=hasEvent();
 	var postObj=getUserEvent(userID);
 	var friends=myFriends();
@@ -49,17 +49,22 @@ $(document).ready(function() {
 	*/
 	function getUserObj(){
 	if(!FB.getLoginStatus()){
+		if(Parse.Query(Parse.User)!=null){
+			return Parse.Query(Parse.User);
+		}else{
+			return new UserObj{Parse.Query(Parse.User).userID};
+		}
 	}else{
 	//TODO
 	Parse.FacebookUtils.logIn("TODO this is the permissions we want);
 	}
-	
 	//if the db has the userid in it, return the userobject otherwise create a new userobject
 	}
 	/*
 	//Find the event of the user if they have one
 	*/
 	function checkMyEvent(){
+	
 	}
 	
 	/*
