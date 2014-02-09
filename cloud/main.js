@@ -1,3 +1,11 @@
+$(function() {
+
+  Parse.$ = jQuery;
+
+  // TASK 1: ENTER YOUR APPLICATION AND JAVASCRIPT KEYS HERE
+  Parse.initialize("K809xYpHgzM7reOEW2osYc6Utzqz33KkBN44daoR",
+                   "cryRxrIRuA9LejD3xKIcg4XegnwzJLqErnm1ZH8X",
+                   "jLs4QguNTMYHxHaBfOtw1U00g0xmn5MS6KDCnXJc");
 
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 // For example:
@@ -36,5 +44,7 @@ var Event = Parse.Object.extend({
 	meetingWho: "meeting",
 	timeLeaving: "timeLeaving",
 	doing: "doing"
+});
+
 });
 
