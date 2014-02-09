@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "Get Back Safe": {
+            "applicationId": "K809xYpHgzM7reOEW2osYc6Utzqz33KkBN44daoR", 
+            "masterKey": "UQBCWt83U6n87UF03wIFB2DJj41yFdgqFECTVcL1"
+        }, 
+        "_default": {
+            "link": "Get Back Safe"
+        }
+    }
+}
