@@ -48,6 +48,11 @@ $(document).ready(function() {
 	/Get user ID
 	*/
 	function getUserObj(){
+	if(!FB.getLoginStatus()){
+	}else{
+	//TODO
+	Parse.FacebookUtils.logIn("TODO this is the permissions we want);
+	}
 	
 	//if the db has the userid in it, return the userobject otherwise create a new userobject
 	}
@@ -61,6 +66,7 @@ $(document).ready(function() {
 	/Return if a user has posted an event
 	*/
 	function hasEvent()= new function(){
+	
 	}
 	
 	/*
