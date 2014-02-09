@@ -1,30 +1,19 @@
+$(function() {
 
-// Use Parse.Cloud.define to define as many cloud functions as you want.
-// For example:
-Parse.Cloud.define("hello", function(request, response) {
-  response.success("Hello world!");
-});
+  Parse.$ = jQuery;
 
-Parse.Cloud.define("something", function(request,response){
-	response.sucess("something!");
-});
-
-Parse.Cloud.define("getFriends", function(request,response){
-	response.sucess("showFriends!");
-});
-
-Parse.Cloud.define("post", function(request,response){
-	response.sucess("Store Data!");
-});
-
-Parse.Cloud.define("CheckSafe", function(request,response){
-	response.sucess("check all events to see if any have expired past time expected to get back, and send mesages!");
-});
+  // TASK 1: ENTER YOUR APPLICATION AND JAVASCRIPT KEYS HERE
+  Parse.initialize("K809xYpHgzM7reOEW2osYc6Utzqz33KkBN44daoR",
+                   "cryRxrIRuA9LejD3xKIcg4XegnwzJLqErnm1ZH8X",
+                   "jLs4QguNTMYHxHaBfOtw1U00g0xmn5MS6KDCnXJc");
 
 
+//define objects
+
+//events
 var Event = Parse.Object.extend({
 	destination: "destination",
-	expectedBack: "expectedBack"
+	expectedBack: "expectedBack",
 	bufferTime: "buffer",
 	userDescription: "userDescription",
 	travelingWith: "travelingWith",
@@ -32,3 +21,54 @@ var Event = Parse.Object.extend({
 	timeLeaving: "timeLeaving",
 	doing: "doing"
 });
+
+var User = Parse.Object.extend({
+	id = "facebookID",
+	safe = "isSafe",
+	friends = " userFriends"
+	};
+
+
+// Use Parse.Cloud.define to define as many cloud functions as you want.
+// For example:
+Parse.Cloud.define("hello", function(request, response) {
+  response.success("Hello world!");
+});
+
+Parse.Cloud.define("gotBack", function(request,response){
+	response.sucess("something!");
+	//set user.safe = true;
+});
+
+Parse.Cloud.define("getFriends", function(user){
+	response.sucess("showFriends!");
+	
+	//for user check friends
+	//if friend.has event && event is expired
+	//add to total friends to display
+	//return friends / display them
+});
+
+Parse.Cloud.define("getEvent", function(user){
+//todo for user get event
+}
+Parse.Cloud.define("post", function(request,response){
+    new outEvent = new Event();
+    outEvent.expectedBack=document.getElementById("back").value;
+    outEvent.userDescription = document.getElementById("wearing").value;
+    outEvent.travelingWith = document.getElementById("with").value;
+    outEvent.meeting = document.getElementById("meeting").value;
+    
+    outEvent.save(null,{});
+
+});
+
+Parse.Cloud.define("CheckSafe", function(request,response){
+	response.sucess("check all events to see if any have expired past time expected to get back, and send mesages!");
+});
+
+
+
+
+});
+

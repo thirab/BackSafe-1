@@ -31,6 +31,24 @@
 </head>
 
 <body>
+<div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        Parse.FacebookUtils.init({
+          appId      : '692151217495840',
+          status     : true,
+          xfbml      : true
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -72,23 +90,23 @@
 			<button type="button" class="btn btn-custom">I'm Back Safe!</button>
 		</div>
 		<div class="col-md-6 column">
-			<form role="form">
+			<form id="eventForm" role="form">
 				<div class="form-group">
 					 <label>Destination</label><input class="form-control">
 				</div>
 				<div class="form-group">
-					 <label>When will you be back?</label><input class="form-control">
+					 <label>When will you be back?</label><input id="back" class="form-control">
 				</div>
 				<div class="form-group">
-					 <label>What are you wearing?</label><input class="form-control">
+					 <label>What are you wearing?</label><input id="wearing" class="form-control">
 				</div>
 				<div class="form-group">
-					 <label>Who are you with?</label><input class="form-control">
+					 <label>Who are you with?</label><input id="with" class="form-control">
 				</div>
 				<div class="form-group">
-					 <label>Who are you meeting?</label><input class="form-control">
+					 <label>Who are you meeting?</label><input id="meeting" class="form-control">
 				</div>
-				<button type="submit" class="btn btn-default">Head Out</button>
+				<button type="button" onclick="post()" class="btn btn-default">Head Out</button>
 			</form>
 		</div>
 		<div class="col-md-4 column">
