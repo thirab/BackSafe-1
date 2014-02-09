@@ -1,4 +1,11 @@
 $(document).ready(function() {
+
+	var username="bob"; 
+	var hasPost=false;
+	var postObj="the object";
+	var friends="my friends";
+	var friendsMissing="missing?";
+	
 	
   Parse.initialize("E3aKqq2sCS2aC20YyNALua7YMGxMMZd71IJ0iTHb",
                    "NAU96IHJ6zOUUOpqaLVEj1dCMPv4H02N8B4SetPR");
@@ -21,6 +28,49 @@ $(document).ready(function() {
 	safe : "isSafe",
 	friends : "userFriends"
 	});
+	
+	/*
+	//Find the event of the user if they have one
+	*/
+	function checkMyEvent(){
+	}
+	
+	/*
+	/Return if a user has posted an event
+	*/
+	function hasEvent()= new function(){
+	}
+	
+	/*
+	/Return friends of the user
+	*/
+	function myFriends(){
+	}
+	
+	/*
+	//Return missing friends of the user
+	*/
+	function missingFriends(){
+	}
+	
+	/*
+	//Return friends of the user's Event
+	*/
+	function getUserEvent(userID){
+	}
+	
+	/*
+	/Return if user is new
+	*/ 
+	function isNewUser(userID){
+	}
+	
+	/*
+	/add user to DB
+	*/ 
+	function addNewUser(userID){
+	}
+	
 	
 	$("#eventForm").on("submit", function(e) {
 		e.preventDefault();
@@ -46,7 +96,7 @@ $(document).ready(function() {
 				console.dir(e);
 			}
 		});
-		
+		location.reload();
 	});
 	
 });
