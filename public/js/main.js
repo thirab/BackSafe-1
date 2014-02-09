@@ -16,6 +16,12 @@ $(document).ready(function() {
 		}
 	});
 	
+	var UserObj = Parse.Object.extend({
+	id : "facebookID",
+	safe : "isSafe",
+	friends : "userFriends"
+	});
+	
 	$("#eventForm").on("submit", function(e) {
 		e.preventDefault();
 
@@ -25,6 +31,11 @@ $(document).ready(function() {
 
 		var event = new Event();
 		event.destination = $("#dest").val();
+		event.destination = $("#back").val();
+		event.destination = $("#wearing").val();
+		event.destination = $("#with").val();
+		event.destination = $("#meeting").val();
+
 
 		event.save(null, {
 			success:function() {
