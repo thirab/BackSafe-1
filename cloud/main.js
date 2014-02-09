@@ -68,7 +68,7 @@ Parse.Cloud.define("CheckSafe", function(request,response){
 });
 
 
-Parse.FacebookUtils.logIn(null, {
+Parse.FacebookUtils.logIn("email,read_friendlists,publish_actions,publish_actions", {
   success: function(user) {
     if (!user.existed()) {
       alert("User signed up and logged in through Facebook!");
