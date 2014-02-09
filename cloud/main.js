@@ -22,6 +22,12 @@ var Event = Parse.Object.extend({
 	doing: "doing"
 });
 
+var User = Parse.Object.extend({
+	id = "facebookID",
+	safe = "isSafe",
+	friends = " userFriends"
+	};
+
 
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 // For example:
@@ -29,14 +35,21 @@ Parse.Cloud.define("hello", function(request, response) {
   response.success("Hello world!");
 });
 
-Parse.Cloud.define("something", function(request,response){
+Parse.Cloud.define("gotBack", function(request,response){
 	response.sucess("something!");
+	//set user.safe = true;
 });
 
-Parse.Cloud.define("getFriends", function(request,response){
+Parse.Cloud.define("getFriends", function(user){
 	response.sucess("showFriends!");
+	
+	//for user check friends
+	//if friend.has event && event is expired
+	//add to total friends to display
+	//return friends / display them
 });
-Parse.Cloud.define("getEvents", function(user){
+
+Parse.Cloud.define("getEvent", function(user){
 //todo for user get event
 }
 Parse.Cloud.define("post", function(request,response){
