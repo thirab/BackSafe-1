@@ -28,7 +28,8 @@ $(document).ready(function() {
 	var UserObj = Parse.Object.extend({
 	id : "facebookID",
 	safe : "isSafe",
-	friends : "userFriends"
+	friends : "userFriends",
+	post : "post"
 	});
 	
 	/*
@@ -47,6 +48,8 @@ $(document).ready(function() {
 	/Get user ID
 	*/
 	function getUserObj(){
+	
+	//if the db has the userid in it, return the userobject otherwise create a new userobject
 	}
 	/*
 	//Find the event of the user if they have one
