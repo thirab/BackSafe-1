@@ -9,7 +9,7 @@ function after_facebook() {
 	
 	
   Parse.initialize("K809xYpHgzM7reOEW2osYc6Utzqz33KkBN44daoR",
-                   "cryRxrIRuA9LejD3xKIcg4XegnwzJLqErnm1ZH8X");
+                   "jLs4QguNTMYHxHaBfOtw1U00g0xmn5MS6KDCnXJc");
 
   	var Event = Parse.Object.extend("Event",{
 		defaults: {
@@ -138,17 +138,17 @@ function after_facebook() {
 		//gather the form data
 
 		var event = new Event();
-		event.destination = $("#dest").val();
-		event.expectedBack = $("#back").val();
-		event.userDescription = $("#wearing").val();
-		event.travelingWith = $("#with").val();
-		event.meetingWho = $("#meeting").val();
+		event.set("destination", $("#dest").val());
+		event.set("expectedBack", $("#back").val());
+		event.set("userDescription", $("#wearing").val());
+		event.set("travelingWith", $("#with").val());
+		event.set("meetingWho",$("#meeting").val());
 
 
 		event.save(null, {
 			success:function() {
 				console.log("Success");
-				console.log(event.destination);
+				console.log(event.get("destination"));
 			},
 			error:function(e) {
 				console.log(e);
