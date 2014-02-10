@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
-  <script type="text/javascript" src="/js/main.js"></script>
 
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
@@ -32,39 +31,21 @@
 </head>
 
 <body>
-<div id="fb-root"></div>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '692151217495840',
-          status     : true,
-          xfbml      : true
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/all.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="navbar-header">
-					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="#">Back Safe</a>
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="http://backsafe.parseapp.com/">Back Safe</a>
 				</div>
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class=>
-							<a href="#">About</a>
+							<a href="http://backsafe.parseapp.com/about.html">About</a>
 						</li>
 						<li>
-							<a href="#">Tutorial</a>
+							<a href="http://backsafe.parseapp.com/tutorial.html">Tutorial</a>
 						</li>
 					</ul>
 					
@@ -88,7 +69,7 @@
 					2:00 am.
 				</dd>
 			</dl>
-			<button type="button" class="btn btn-custom">I'm Back Safe!</button>
+			<button type="button" onclick="myFunction()" class="btn btn-custom">I'm Back Safe!</button>
 		</div>
 		<div class="col-md-6 column">
 			<form id="eventForm" role="form">

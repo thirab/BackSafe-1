@@ -1,5 +1,4 @@
-$(document).ready(function() {
-
+function after_facebook() {
 	var userID=getUserID(); 
 	var username=getUserName();
 	var userObj=getUserObj();
@@ -9,8 +8,8 @@ $(document).ready(function() {
 	var friendsMissing=missingFriends();;
 	
 	
-  Parse.initialize("E3aKqq2sCS2aC20YyNALua7YMGxMMZd71IJ0iTHb",
-                   "NAU96IHJ6zOUUOpqaLVEj1dCMPv4H02N8B4SetPR");
+  Parse.initialize("K809xYpHgzM7reOEW2osYc6Utzqz33KkBN44daoR",
+                   "cryRxrIRuA9LejD3xKIcg4XegnwzJLqErnm1ZH8X");
 
   	var Event = Parse.Object.extend("Event",{
 		defaults: {
@@ -25,11 +24,13 @@ $(document).ready(function() {
 		}
 	});
 	
-	var UserObj = Parse.Object.extend({
-	id : "facebookID",
-	name : "name";
-	safe : "isSafe",
-	event : "event"
+	var UserObj = Parse.Object.extend("Users",{
+		defaults: {
+			id : "facebookID",
+			name : "name",
+			safe : "isSafe",
+			event : "event"
+			}
 	});
 	
 	/*
@@ -56,13 +57,13 @@ $(document).ready(function() {
 	function getUserObj(){
 	if(!FB.getLoginStatus()){
 		if(!isNewUser()){
-			return Parse.Query(userID);
+			//return Parse.Query(userID);
 		}else{
 			
 		}
 	}else{
 	//TODO
-	Parse.FacebookUtils.logIn("TODO this is the permissions we want);
+	Parse.FacebookUtils.logIn("TODO this is the permissions we want");
 	}
 	//if the db has the userid in it, return the userobject otherwise create a new userobject
 	}
@@ -71,15 +72,15 @@ $(document).ready(function() {
 	*/
 	function checkMyEvent(){
 	//todo
-		userObj.event;
+		//userObj.event;
 		
 	}
 	
 	/*
 	/Return if a user has posted an event
 	*/
-	function hasEvent()= new function(){
-		return Parse.Query(Parse.User).hasEvent;
+	function hasEvent(){
+		//return Parse.Query(Parse.User).hasEvent;
 	}
 	
 	/*
@@ -99,16 +100,16 @@ $(document).ready(function() {
 	//Return friends of the user's Event
 	*/
 	function getUserEvent(userID){
-		Parse.Query(userID).event;
+		//Parse.Query(userID).event;
 	}
 	
 	/*
 	/Return if user is new
 	*/ 
 	function isNewUser(userID){
-		if(Parse.Query(Parse.User)!=null){
-			return false;
-		}
+		// if(Parse.Query(Parse.User)!=null){
+// 			return false;
+// 		}
 		return true;
 	}
 	
@@ -116,19 +117,19 @@ $(document).ready(function() {
 	/add user to DB
 	*/ 
 	function addNewUser(){
-		new user = UserObj({
-			id=userID;
-			name=userName;
-			hasEvent=false;
-			event=null;
-			isSafe=true;
+		user = new UserObj({
+			id:userID,
+			name:userName,
+			hasEvent:false,
+			event:null,
+			isSafe:true
 			
 		});
 	}
 	
-	
-	
-	
+	function backSafe(){
+	//TODO 
+	}
 	$("#eventForm").on("submit", function(e) {
 		e.preventDefault();
 
@@ -138,10 +139,10 @@ $(document).ready(function() {
 
 		var event = new Event();
 		event.destination = $("#dest").val();
-		event.destination = $("#back").val();
-		event.destination = $("#wearing").val();
-		event.destination = $("#with").val();
-		event.destination = $("#meeting").val();
+		event.expectedBack = $("#back").val();
+		event.userDescription = $("#wearing").val();
+		event.travelingWith = $("#with").val();
+		event.meetingWho = $("#meeting").val();
 
 
 		event.save(null, {
@@ -150,10 +151,22 @@ $(document).ready(function() {
 				console.log(event.destination);
 			},
 			error:function(e) {
-				console.dir(e);
+				console.log(e);
 			}
 		});
-		location.reload();
+		//location.reload();
 	});
 	
+}
+jQuery(document).ready(function() {
+
+  $.ajaxSetup({ cache: true });
+  $.getScript('//connect.facebook.net/en_UK/all.js', function(){
+    FB.init({
+      appId: '692151217495840',
+    });     
+    //$('#loginbutton,#feedbutton').removeAttr('disabled');
+    //FB.getLoginStatus(updateStatusCallback);
+    after_facebook();
+  });
 });
