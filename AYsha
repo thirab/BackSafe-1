@@ -1,16 +1,4 @@
-function after_facebook() {
-	var userID=getUserID(); 
-	var username=getUserName();
-	var userObj=getUserObj();
-	var hasPost=hasEvent();
-	var postObj=getUserEvent(userID);
-	var friends=myFriends();
-	var friendsMissing=missingFriends();;
 
-
-  Parse.initialize("K809xYpHgzM7reOEW2osYc6Utzqz33KkBN44daoR",
-                   "jLs4QguNTMYHxHaBfOtw1U00g0xmn5MS6KDCnXJc");
-	
 	window.fbAsyncInit = function() {
 	Parse.FacebookUtils.init({
     appId      : '692151217495840',
@@ -31,6 +19,20 @@ function after_facebook() {
   }
 });
   };
+  
+function after_facebook() {
+	var userID=getUserID(); 
+	var username=getUserName();
+	var userObj=getUserObj();
+	var hasPost=hasEvent();
+	var postObj=getUserEvent(userID);
+	var friends=myFriends();
+	var friendsMissing=missingFriends();;
+
+
+  Parse.initialize("K809xYpHgzM7reOEW2osYc6Utzqz33KkBN44daoR",
+                   "jLs4QguNTMYHxHaBfOtw1U00g0xmn5MS6KDCnXJc");
+	
 
   	var Event = Parse.Object.extend("Event",{
 		defaults: {
