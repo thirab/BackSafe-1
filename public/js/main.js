@@ -33,6 +33,10 @@ function after_facebook() {
 			}
 	});
 	
+	function setUp(){
+		$("#currentTrip").text("My current Trip");
+		$("#returnTime").text("2 am");
+	}
 	/*
 	/Get user ID
 	*/
@@ -130,8 +134,8 @@ function after_facebook() {
 	function backSafe(){
 	//TODO 
 	}
-	$("#currentTrip").text("My current Trip");
-	$("#returnTime").text("2 am");
+
+	
 	$("#eventForm").on("submit", function(e) {
 		e.preventDefault();
 
@@ -158,6 +162,7 @@ function after_facebook() {
 		});
 		//location.reload();
 	});
+	setUp();
 	
 }
 jQuery(document).ready(function() {
