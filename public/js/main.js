@@ -130,6 +130,8 @@ function after_facebook() {
 	function backSafe(){
 	//TODO 
 	}
+	$("#currentTrip").text("My current Trip");
+	$("#returnTime").text("2 am");
 	$("#eventForm").on("submit", function(e) {
 		e.preventDefault();
 
